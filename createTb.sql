@@ -1,0 +1,6 @@
+CREATE TABLE operations (
+    id SERIAL PRIMARY KEY,
+    a INT NOT NULL,
+    b INT NOT NULL,
+    c INT GENERATED ALWAYS AS (a + b) STORED
+);
