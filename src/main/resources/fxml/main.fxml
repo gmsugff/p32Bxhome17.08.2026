@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController">
+    <top>
+        <VBox spacing="10" alignment="CENTER">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="a:"/>
+                <TextField fx:id="fieldA" prefWidth="80"/>
+                <Label text="b:"/>
+                <TextField fx:id="fieldB" prefWidth="80"/>
+                <Button fx:id="btnCalculate" text="Вычислить / Сохранить"/>
+                <Label text="Результат:"/>
+                <TextField fx:id="resultField" editable="false" prefWidth="80"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Фильтр a:"/>
+                <TextField fx:id="filterA" prefWidth="60"/>
+                <Label text="Фильтр b:"/>
+                <TextField fx:id="filterB" prefWidth="60"/>
+                <Button fx:id="btnFilter" text="Применить фильтр"/>
+                <Button fx:id="btnClear" text="Очистить историю"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="historyTable">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                <TableColumn fx:id="colA" text="a" prefWidth="80"/>
+                <TableColumn fx:id="colB" text="b" prefWidth="80"/>
+                <TableColumn fx:id="colC" text="c (a+b)" prefWidth="100"/>
+            </columns>
+            <BorderPane.margin>
+                <Insets top="10" right="20" bottom="20" left="20"/>
+            </BorderPane.margin>
+        </TableView>
+    </center>
+</BorderPane>
